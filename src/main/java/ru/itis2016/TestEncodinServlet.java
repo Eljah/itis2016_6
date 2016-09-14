@@ -55,6 +55,7 @@ public class TestEncodinServlet extends HttpServlet {
         resp.addCookie(new Cookie("histcookie",text));
         log.debug("Cookies added "+text);
         // /getServletContext().getRequestDispatcher("/users.jsp").forward(req, resp);    }
+        resp.sendRedirect("index.html");
     }
 }
 
