@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/studentsApp" useHttpOnly="true">
+    <Resource
+            driverClassName="com.mysql.jdbc.Driver"
+            maxActive="4"
+            maxIdle="2"
+            maxWait="5000"
+            name="jdbc/StudentsDS"
+            username="root"
+            password="tatarstan"
+            type="javax.sql.DataSource"
+            url="jdbc:mysql://localhost/students?characterEncoding=utf8&amp;allowMultiQueries=true"
+            validationQuery="SELECT 1">
+    </Resource><!--under the TOmcat  name should be 'jdbc/StudentsDS'-->
+</Context>
