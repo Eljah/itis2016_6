@@ -17,7 +17,7 @@ public class TrueServlet extends HttpServlet {
             throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
         //resp.getWriter().write("true");
-        resp.getWriter().write("false");
+        resp.getWriter().write("true");
     }
 
 }

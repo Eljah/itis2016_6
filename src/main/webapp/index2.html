@@ -171,7 +171,11 @@
         // вешаем на клик по элементу с id = example-1
         $('#example-1').click(function(){
             // загрузку HTML кода из файла example.html
-            $(this).load('echo?echo='+$('#aaa').val());
+            if($(".has-error").length==0) {
+                // exists
+                $(this).load('echo?echo='+$('#aaa').val());
+            }
+
         })
     });
 

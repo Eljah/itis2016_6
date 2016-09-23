@@ -10,39 +10,39 @@ import java.util.Collection;
 import java.util.List;
 
 public class ManagementSystem {
-    private static Connection con;
     private static ManagementSystem instance;
-    private static DataSource dataSource;
 
     private ManagementSystem() {
     }
 
     public Connection getConnection()
     {
-        return con;
+        Context ctx = null;
+        try {
+            ctx = new InitialContext();
+            DataSource dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/StudentsDS");
+            Connection con = dataSource.getConnection();
+            return con;
+        } catch (NamingException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+        //instance.dataSource = (DataSource) ctx.lookup("jdbc/StudentsDS");
+        //instance.dataSource = (DataSource) ctx.lookup("StudentsDS");
     }
 
     public static synchronized ManagementSystem getInstance() {
         if (instance == null) {
-            try {
                 instance = new ManagementSystem();
-                Context ctx = new InitialContext();
-                instance.dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/StudentsDS");
-                //instance.dataSource = (DataSource) ctx.lookup("jdbc/StudentsDS");
-                //instance.dataSource = (DataSource) ctx.lookup("StudentsDS");
-                con = dataSource.getConnection();
-            } catch (NamingException e) {
-                e.printStackTrace();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
         return instance;
     }
 
     public List getGroups() throws SQLException {
         List groups = new ArrayList();
-        Statement stmt = con.createStatement();
+        Statement stmt = getConnection().createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, groupName, curator, speciality FROM groups");
         while (rs.next()) {
             Group gr = new Group();
@@ -59,7 +59,7 @@ public class ManagementSystem {
 
     public Collection getAllStudents() throws SQLException {
         Collection students = new ArrayList();
-        Statement stmt = con.createStatement();
+        Statement stmt = getConnection().createStatement();
         ResultSet rs = stmt.executeQuery("SELECT student_id, firstName, patronymic, surName, "
                 + "sex, dateOfBirth, group_id, educationYear FROM students ORDER BY surName, firstName, patronymic");
         while (rs.next()) {
@@ -73,7 +73,7 @@ public class ManagementSystem {
 
     public Collection getStudentsFromGroup(Group group, int year) throws SQLException {
         Collection students = new ArrayList();
-        PreparedStatement stmt = con.prepareStatement("SELECT student_id, firstName, patronymic, surName, "
+        PreparedStatement stmt = getConnection().prepareStatement("SELECT student_id, firstName, patronymic, surName, "
                 + "sex, dateOfBirth, group_id, educationYear FROM students "
                 + "WHERE group_id =  ? AND  educationYear =  ? "
                 + "ORDER BY surName, firstName, patronymic");
@@ -91,7 +91,7 @@ public class ManagementSystem {
 
     public Collection getStudentsFromGroup(Group group) throws SQLException {
         Collection students = new ArrayList();
-        PreparedStatement stmt = con.prepareStatement("SELECT student_id, firstName, patronymic, surName, "
+        PreparedStatement stmt = getConnection().prepareStatement("SELECT student_id, firstName, patronymic, surName, "
                 + "sex, dateOfBirth, group_id, educationYear FROM students "
                 + "WHERE group_id =  ? "
                 + "ORDER BY surName, firstName, patronymic");
@@ -108,7 +108,7 @@ public class ManagementSystem {
 
     public Student getStudentById(int studentId) throws SQLException {
         Student student = null;
-        PreparedStatement stmt = con.prepareStatement("SELECT student_id, firstName, patronymic, surName,"
+        PreparedStatement stmt = getConnection().prepareStatement("SELECT student_id, firstName, patronymic, surName,"
                 + "sex, dateOfBirth, group_id, educationYear FROM students WHERE student_id = ?");
         stmt.setInt(1, studentId);
         ResultSet rs = stmt.executeQuery();
@@ -121,7 +121,7 @@ public class ManagementSystem {
     }
 
     public void moveStudentsToGroup(Group oldGroup, int oldYear, Group newGroup, int newYear) throws SQLException {
-        PreparedStatement stmt = con.prepareStatement("UPDATE students SET group_id =  ?, educationYear=? "
+        PreparedStatement stmt = getConnection().prepareStatement("UPDATE students SET group_id =  ?, educationYear=? "
                 + "WHERE group_id =  ? AND  educationYear = ?");
         stmt.setInt(1, newGroup.getGroupId());
         stmt.setInt(2, newYear);
@@ -131,14 +131,14 @@ public class ManagementSystem {
     }
 
     public void removeStudentsFromGroup(Group group, int year) throws SQLException {
-        PreparedStatement stmt = con.prepareStatement("DELETE FROM students WHERE group_id = ? AND educationYear = ?");
+        PreparedStatement stmt = getConnection().prepareStatement("DELETE FROM students WHERE group_id = ? AND educationYear = ?");
         stmt.setInt(1, group.getGroupId());
         stmt.setInt(2, year);
         stmt.execute();
     }
 
     public void insertStudent(Student student) throws SQLException {
-        PreparedStatement stmt = con.prepareStatement("INSERT INTO students "
+        PreparedStatement stmt = getConnection().prepareStatement("INSERT INTO students "
                 + "(firstName, patronymic, surName, sex, dateOfBirth, group_id, educationYear)"
                 + "VALUES( ?,  ?,  ?,  ?,  ?,  ?,  ?)");
         stmt.setString(1, student.getFirstName());
@@ -152,7 +152,7 @@ public class ManagementSystem {
     }
 
     public void updateStudent(Student student) throws SQLException {
-        PreparedStatement stmt = con.prepareStatement("UPDATE students "
+        PreparedStatement stmt = getConnection().prepareStatement("UPDATE students "
                 + "SET firstName=?, patronymic=?, surName=?, sex=?, dateOfBirth=?, group_id=?,"
                 + "educationYear=? WHERE student_id=?");
         stmt.setString(1, student.getFirstName());
@@ -167,7 +167,7 @@ public class ManagementSystem {
     }
 
     public void deleteStudent(Student student) throws SQLException {
-        PreparedStatement stmt = con.prepareStatement("DELETE FROM students WHERE student_id =  ?");
+        PreparedStatement stmt = getConnection().prepareStatement("DELETE FROM students WHERE student_id =  ?");
         stmt.setInt(1, student.getStudentId());
         stmt.execute();
     }
