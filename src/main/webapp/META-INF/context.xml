@@ -2,8 +2,8 @@
 <Context path="/studentsApp" useHttpOnly="true">
     <Resource
             driverClassName="com.mysql.jdbc.Driver"
-            maxActive="4"
-            maxIdle="2"
+            maxActive="100"
+            maxIdle="200"
             maxWait="5000"
             name="jdbc/StudentsDS"
             username="root"

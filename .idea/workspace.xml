@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3448a6d1-7f82-40c8-89df-8613e18ec366" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/itis2016/ManagementSystem.java" afterPath="$PROJECT_DIR$/src/main/java/ru/itis2016/ManagementSystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/itis2016/TrueServlet.java" afterPath="$PROJECT_DIR$/src/main/java/ru/itis2016/TrueServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/basewebapp_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/basewebapp_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index2.html" afterPath="$PROJECT_DIR$/src/main/webapp/index2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="basewebapp.iws" />
@@ -46,23 +38,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ManagementSystem.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ManagementSystem.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/itis2016/ManagementSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5399568" vertical-offset="0" max-vertical-offset="4300">
-              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4706" max-vertical-offset="5200">
+              <caret line="209" column="1" selection-start-line="209" selection-start-column="1" selection-end-line="209" selection-end-column="1" />
               <folding>
-                <marker date="1474622854843" expanded="true" signature="1377:1430" placeholder="SELECT id, g..groups..." />
-                <marker date="1474622854843" expanded="true" signature="1996:2163" placeholder="SELECT stude..students..." />
-                <marker date="1474622854843" expanded="true" signature="2553:2806" placeholder="SELECT stude..students..." />
-                <marker date="1474622854843" expanded="true" signature="3304:3533" placeholder="SELECT stude..students..." />
-                <marker date="1474622854843" expanded="true" signature="3979:4126" placeholder="SELECT stude..students..." />
-                <marker date="1474622854843" expanded="true" signature="4542:4656" placeholder="UPDATE stude..." />
-                <marker date="1474622854843" expanded="true" signature="5003:5064" placeholder="DELETE FROM ..." />
-                <marker date="1474622854843" expanded="true" signature="5309:5481" placeholder="INSERT INTO ..." />
-                <marker date="1474622854843" expanded="true" signature="6042:6209" placeholder="UPDATE stude..." />
-                <marker date="1474622854843" expanded="true" signature="6818:6860" placeholder="DELETE FROM ..." />
+                <element signature="e#1468#1469#0" expanded="true" />
+                <element signature="e#1509#1510#0" expanded="true" />
+                <marker date="1474624766412" expanded="true" signature="1922:1975" placeholder="SELECT id, g..groups..." />
+                <marker date="1474624766412" expanded="true" signature="2593:2760" placeholder="SELECT stude..students..." />
+                <marker date="1474624766412" expanded="true" signature="3202:3455" placeholder="SELECT stude..students..." />
+                <marker date="1474624766412" expanded="true" signature="4005:4234" placeholder="SELECT stude..students..." />
+                <marker date="1474624766412" expanded="true" signature="4723:4870" placeholder="SELECT stude..students..." />
+                <marker date="1474624766412" expanded="true" signature="5338:5452" placeholder="UPDATE stude..." />
+                <marker date="1474624766412" expanded="true" signature="5851:5912" placeholder="DELETE FROM ..." />
+                <marker date="1474624766412" expanded="true" signature="6209:6381" placeholder="INSERT INTO ..." />
+                <marker date="1474624766412" expanded="true" signature="6994:7161" placeholder="UPDATE stude..." />
+                <marker date="1474624766412" expanded="true" signature="7822:7864" placeholder="DELETE FROM ..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mysql_dump.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysql_dump.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.72" vertical-offset="164" max-vertical-offset="4950">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainFrame.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/MainFrame.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.294118" vertical-offset="216" max-vertical-offset="2075">
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -70,18 +84,8 @@
       <file leaf-file-name="StudentFrame.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrame.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.0" vertical-offset="1017" max-vertical-offset="1850">
-              <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index2.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/index2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2058823" vertical-offset="4250" max-vertical-offset="6875">
-              <caret line="173" column="31" selection-start-line="173" selection-start-column="31" selection-end-line="173" selection-end-column="31" />
+            <state vertical-scroll-proportion="-0.7352941" vertical-offset="0" max-vertical-offset="1850">
+              <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -90,28 +94,18 @@
       <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="500" max-vertical-offset="2925">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2578" max-vertical-offset="2925">
               <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="923" max-vertical-offset="1375">
-              <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="context.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="context.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/context.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="500">
-              <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.3573487" vertical-offset="1" max-vertical-offset="500">
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -120,8 +114,8 @@
       <file leaf-file-name="MainFrameServlet.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/itis2016/MainFrameServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1036" max-vertical-offset="3550">
-              <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2819" max-vertical-offset="3550">
+              <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -162,8 +156,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/ru/itis2016/TrueServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/index2.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/itis2016/ManagementSystem.java" />
       </list>
     </option>
@@ -678,12 +672,17 @@
       <created>1473882808444</created>
       <updated>1473882808444</updated>
       <workItem from="1473882811509" duration="64000" />
-      <workItem from="1474522537230" duration="17613000" />
+      <workItem from="1474522537230" duration="20794000" />
     </task>
+    <task id="LOCAL-00001" summary="asds">
+      <created>1474622887559</created>
+      <updated>1474622887559</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17677000" />
+    <option name="totallyTimeSpent" value="20858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1032" height="732" extended-state="6" />
@@ -703,14 +702,15 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.054639176" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09381443" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29484537" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30653265" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39072165" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14572865" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -764,6 +764,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="asds" />
+    <option name="LAST_COMMIT_MESSAGE" value="asds" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -773,14 +775,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/MainFrame.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.294118" vertical-offset="216" max-vertical-offset="2075">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/itis2016/MainFrameForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="284" max-vertical-offset="800">
@@ -845,22 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="500" max-vertical-offset="2925">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="500">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/itis2016/Student.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="325" max-vertical-offset="1850">
@@ -877,14 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/itis2016/MainFrameServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1036" max-vertical-offset="3550">
-          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/itis2016/StudentForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1850">
@@ -893,30 +863,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mysql_dump.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.72" vertical-offset="164" max-vertical-offset="4950">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/MainFrame.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.294118" vertical-offset="216" max-vertical-offset="2075">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrame.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="1017" max-vertical-offset="1850">
-          <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+        <state vertical-scroll-proportion="-0.7352941" vertical-offset="0" max-vertical-offset="1850">
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/itis2016/ManagementSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5399568" vertical-offset="0" max-vertical-offset="4300">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="4706" max-vertical-offset="5200">
+          <caret line="209" column="1" selection-start-line="209" selection-start-column="1" selection-end-line="209" selection-end-column="1" />
           <folding>
-            <marker date="1474622854843" expanded="true" signature="1377:1430" placeholder="SELECT id, g..groups..." />
-            <marker date="1474622854843" expanded="true" signature="1996:2163" placeholder="SELECT stude..students..." />
-            <marker date="1474622854843" expanded="true" signature="2553:2806" placeholder="SELECT stude..students..." />
-            <marker date="1474622854843" expanded="true" signature="3304:3533" placeholder="SELECT stude..students..." />
-            <marker date="1474622854843" expanded="true" signature="3979:4126" placeholder="SELECT stude..students..." />
-            <marker date="1474622854843" expanded="true" signature="4542:4656" placeholder="UPDATE stude..." />
-            <marker date="1474622854843" expanded="true" signature="5003:5064" placeholder="DELETE FROM ..." />
-            <marker date="1474622854843" expanded="true" signature="5309:5481" placeholder="INSERT INTO ..." />
-            <marker date="1474622854843" expanded="true" signature="6042:6209" placeholder="UPDATE stude..." />
-            <marker date="1474622854843" expanded="true" signature="6818:6860" placeholder="DELETE FROM ..." />
+            <element signature="e#1468#1469#0" expanded="true" />
+            <element signature="e#1509#1510#0" expanded="true" />
+            <marker date="1474624766412" expanded="true" signature="1922:1975" placeholder="SELECT id, g..groups..." />
+            <marker date="1474624766412" expanded="true" signature="2593:2760" placeholder="SELECT stude..students..." />
+            <marker date="1474624766412" expanded="true" signature="3202:3455" placeholder="SELECT stude..students..." />
+            <marker date="1474624766412" expanded="true" signature="4005:4234" placeholder="SELECT stude..students..." />
+            <marker date="1474624766412" expanded="true" signature="4723:4870" placeholder="SELECT stude..students..." />
+            <marker date="1474624766412" expanded="true" signature="5338:5452" placeholder="UPDATE stude..." />
+            <marker date="1474624766412" expanded="true" signature="5851:5912" placeholder="DELETE FROM ..." />
+            <marker date="1474624766412" expanded="true" signature="6209:6381" placeholder="INSERT INTO ..." />
+            <marker date="1474624766412" expanded="true" signature="6994:7161" placeholder="UPDATE stude..." />
+            <marker date="1474624766412" expanded="true" signature="7822:7864" placeholder="DELETE FROM ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/itis2016/MainFrameServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2819" max-vertical-offset="3550">
+          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="500" max-vertical-offset="2925">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3573487" vertical-offset="1" max-vertical-offset="500">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

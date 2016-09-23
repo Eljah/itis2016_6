@@ -11,26 +11,43 @@ import java.util.List;
 
 public class ManagementSystem {
     private static ManagementSystem instance;
-
+    private static Context ctx = null;
+   private static DataSource dataSource =null;
     private ManagementSystem() {
     }
 
-    public Connection getConnection()
-    {
+//    public Connection getConnection()
+//    {
+//        try {
+//            Connection con = dataSource.getConnection();
+//            return con;
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//        //instance.dataSource = (DataSource) ctx.lookup("jdbc/StudentsDS");
+//        //instance.dataSource = (DataSource) ctx.lookup("StudentsDS");
+//    }
+
+    public Connection createConnection() {
+
         Context ctx = null;
         try {
             ctx = new InitialContext();
-            DataSource dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/StudentsDS");
-            Connection con = dataSource.getConnection();
-            return con;
+            return ((DataSource) ctx.lookup("java:comp/env/jdbc/StudentsDS")).getConnection();
         } catch (NamingException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        ;
+        // Использовать DRIVER и DBURL для создания соединения
+        // Рекомендовать реализацию/использование пула соединений
         return null;
-        //instance.dataSource = (DataSource) ctx.lookup("jdbc/StudentsDS");
-        //instance.dataSource = (DataSource) ctx.lookup("StudentsDS");
+    }
+
+    public Connection getConnection() throws SQLException {
+        return createConnection();
     }
 
     public static synchronized ManagementSystem getInstance() {
@@ -42,7 +59,8 @@ public class ManagementSystem {
 
     public List getGroups() throws SQLException {
         List groups = new ArrayList();
-        Statement stmt = getConnection().createStatement();
+        Connection cnct=getConnection();
+        Statement stmt = cnct.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, groupName, curator, speciality FROM groups");
         while (rs.next()) {
             Group gr = new Group();
@@ -54,12 +72,14 @@ public class ManagementSystem {
         }
         rs.close();
         stmt.close();
+        cnct.close();
         return groups;
     }
 
     public Collection getAllStudents() throws SQLException {
         Collection students = new ArrayList();
-        Statement stmt = getConnection().createStatement();
+        Connection cnct=getConnection();
+        Statement stmt = cnct.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT student_id, firstName, patronymic, surName, "
                 + "sex, dateOfBirth, group_id, educationYear FROM students ORDER BY surName, firstName, patronymic");
         while (rs.next()) {
@@ -68,12 +88,14 @@ public class ManagementSystem {
         }
         rs.close();
         stmt.close();
+        cnct.close();
         return students;
     }
 
     public Collection getStudentsFromGroup(Group group, int year) throws SQLException {
         Collection students = new ArrayList();
-        PreparedStatement stmt = getConnection().prepareStatement("SELECT student_id, firstName, patronymic, surName, "
+        Connection cnct=getConnection();
+        PreparedStatement stmt = cnct.prepareStatement("SELECT student_id, firstName, patronymic, surName, "
                 + "sex, dateOfBirth, group_id, educationYear FROM students "
                 + "WHERE group_id =  ? AND  educationYear =  ? "
                 + "ORDER BY surName, firstName, patronymic");
@@ -86,12 +108,14 @@ public class ManagementSystem {
         }
         rs.close();
         stmt.close();
+        cnct.close();
         return students;
     }
 
     public Collection getStudentsFromGroup(Group group) throws SQLException {
         Collection students = new ArrayList();
-        PreparedStatement stmt = getConnection().prepareStatement("SELECT student_id, firstName, patronymic, surName, "
+        Connection cnct=getConnection();
+        PreparedStatement stmt = cnct.prepareStatement("SELECT student_id, firstName, patronymic, surName, "
                 + "sex, dateOfBirth, group_id, educationYear FROM students "
                 + "WHERE group_id =  ? "
                 + "ORDER BY surName, firstName, patronymic");
@@ -103,12 +127,13 @@ public class ManagementSystem {
         }
         rs.close();
         stmt.close();
+        cnct.close();
         return students;
     }
 
     public Student getStudentById(int studentId) throws SQLException {
-        Student student = null;
-        PreparedStatement stmt = getConnection().prepareStatement("SELECT student_id, firstName, patronymic, surName,"
+        Student student = null;Connection cnct=getConnection();
+        PreparedStatement stmt = cnct.prepareStatement("SELECT student_id, firstName, patronymic, surName,"
                 + "sex, dateOfBirth, group_id, educationYear FROM students WHERE student_id = ?");
         stmt.setInt(1, studentId);
         ResultSet rs = stmt.executeQuery();
@@ -117,28 +142,34 @@ public class ManagementSystem {
         }
         rs.close();
         stmt.close();
+        cnct.close();
         return student;
     }
 
     public void moveStudentsToGroup(Group oldGroup, int oldYear, Group newGroup, int newYear) throws SQLException {
-        PreparedStatement stmt = getConnection().prepareStatement("UPDATE students SET group_id =  ?, educationYear=? "
+        Connection cnct=getConnection();
+        PreparedStatement stmt = cnct.prepareStatement("UPDATE students SET group_id =  ?, educationYear=? "
                 + "WHERE group_id =  ? AND  educationYear = ?");
         stmt.setInt(1, newGroup.getGroupId());
         stmt.setInt(2, newYear);
         stmt.setInt(3, oldGroup.getGroupId());
         stmt.setInt(4, oldYear);
         stmt.execute();
+        cnct.close();
     }
 
     public void removeStudentsFromGroup(Group group, int year) throws SQLException {
-        PreparedStatement stmt = getConnection().prepareStatement("DELETE FROM students WHERE group_id = ? AND educationYear = ?");
+        Connection cnct=getConnection();
+        PreparedStatement stmt = cnct.prepareStatement("DELETE FROM students WHERE group_id = ? AND educationYear = ?");
         stmt.setInt(1, group.getGroupId());
         stmt.setInt(2, year);
         stmt.execute();
+        cnct.close();
     }
 
     public void insertStudent(Student student) throws SQLException {
-        PreparedStatement stmt = getConnection().prepareStatement("INSERT INTO students "
+        Connection cnct=getConnection();
+        PreparedStatement stmt = cnct.prepareStatement("INSERT INTO students "
                 + "(firstName, patronymic, surName, sex, dateOfBirth, group_id, educationYear)"
                 + "VALUES( ?,  ?,  ?,  ?,  ?,  ?,  ?)");
         stmt.setString(1, student.getFirstName());
@@ -149,10 +180,12 @@ public class ManagementSystem {
         stmt.setInt(6, student.getGroupId());
         stmt.setInt(7, student.getEducationYear());
         stmt.execute();
+        cnct.close();
     }
 
     public void updateStudent(Student student) throws SQLException {
-        PreparedStatement stmt = getConnection().prepareStatement("UPDATE students "
+        Connection cnct=getConnection();
+        PreparedStatement stmt = cnct.prepareStatement("UPDATE students "
                 + "SET firstName=?, patronymic=?, surName=?, sex=?, dateOfBirth=?, group_id=?,"
                 + "educationYear=? WHERE student_id=?");
         stmt.setString(1, student.getFirstName());
@@ -164,11 +197,14 @@ public class ManagementSystem {
         stmt.setInt(7, student.getEducationYear());
         stmt.setInt(8, student.getStudentId());
         stmt.execute();
+        cnct.close();
     }
 
     public void deleteStudent(Student student) throws SQLException {
-        PreparedStatement stmt = getConnection().prepareStatement("DELETE FROM students WHERE student_id =  ?");
+        Connection cnct=getConnection();
+        PreparedStatement stmt = cnct.prepareStatement("DELETE FROM students WHERE student_id =  ?");
         stmt.setInt(1, student.getStudentId());
         stmt.execute();
+        cnct.close();
     }
 }
