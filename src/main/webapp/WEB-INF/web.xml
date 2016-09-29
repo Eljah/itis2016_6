@@ -46,4 +46,75 @@
         <res-type>javax.sql.DataSource</res-type>
         <res-auth>Container</res-auth>
     </resource-ref>
+
+    <filter>
+        <filter-name>filter1</filter-name>
+        <filter-class>ru.itis2016.filters.Filter1</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>filter1</filter-name>
+        <url-pattern>/filter</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+
+
+   <!-- <filter>
+        <filter-name>filter2</filter-name>
+        <filter-class>ru.itis2016.filters.Filter2</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>filter2</filter-name>
+        <url-pattern>/filter</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>-->
+
+
+    <filter>
+        <filter-name>filter3</filter-name>
+        <filter-class>ru.itis2016.filters.DispatchingFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>filter3</filter-name>
+        <url-pattern>/filter3</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>filter4</filter-name>
+        <filter-class>ru.itis2016.filters.AcceptingDispatchRequestFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>filter4</filter-name>
+        <url-pattern>/test</url-pattern>
+        <!--<dispatcher>REQUEST</dispatcher>-->
+        <dispatcher>FORWARD</dispatcher>
+        <!--<dispatcher>ERROR</dispatcher>-->
+    </filter-mapping>
+
+    <!--<filter>
+        <filter-name>sitemesh</filter-name>
+        <filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>sitemesh</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>-->
+
+
+
+
 </web-app>
