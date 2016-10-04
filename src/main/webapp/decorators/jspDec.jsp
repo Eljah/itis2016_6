@@ -22,7 +22,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/jumboron.css" rel="stylesheet">
+  <!--  <link href="css/jumboron.css" rel="stylesheet">-->
 
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
