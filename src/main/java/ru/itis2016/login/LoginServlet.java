@@ -77,7 +77,7 @@ public class LoginServlet extends HttpServlet {
         cookie.setPath("/studentsApp/");
         cookie.setMaxAge(maxAge);
         cookie.setHttpOnly(true);
-        cookie.setSecure(true);
+        //cookie.setSecure(true);
         response.addCookie(cookie);
     }
 

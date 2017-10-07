@@ -255,7 +255,7 @@ public class RegisteredUserDAO {
         //ResultSet rs = stmt.executeQuery();
        Statement stmt = connection.createStatement();
         log.info("SELECT user_name FROM users WHERE user_name = '"+username+"';");
-        ResultSet rs = stmt.executeQuery("SELECT user_name FROM users WHERE user_name = "+username);
+        ResultSet rs = stmt.executeQuery("SELECT user_name FROM users WHERE user_name = '"+username+"';");
         while (rs.next()) {
             returnedUsername=rs.getString("user_name");
             log.info("Something was fount there");

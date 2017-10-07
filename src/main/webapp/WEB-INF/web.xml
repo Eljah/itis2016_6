@@ -18,7 +18,7 @@
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
-        <welcome-file>index2.html</welcome-file>
+        <welcome-file>main</welcome-file>
     </welcome-file-list>
     <!--<error-page>
         <error-code>400</error-code>
@@ -144,21 +144,25 @@
         </web-resource-collection>
         <auth-constraint>
             <role-name>role1</role-name>
+            <role-name>admin</role-name>
         </auth-constraint>
         <user-data-constraint>
             <transport-guarantee>NONE</transport-guarantee>
         </user-data-constraint>
-    </security-constraint>
+    </security-constraint><!-- nb-->
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
-            <form-login-page>/logon.jsp</form-login-page>
-            <!--<form-login-page>/prelogin</form-login-page>-->
+            <!--<form-login-page>/logon.jsp</form-login-page>-->
+            <form-login-page>/prelogin</form-login-page>
             <form-error-page>/error.jsp</form-error-page>
         </form-login-config>
     </login-config>
     <security-role>
         <role-name>role1</role-name>
+    </security-role>
+    <security-role>
+        <role-name>admin</role-name>
     </security-role>
 
     <security-constraint>
@@ -207,6 +211,12 @@
         <web-resource-collection>
             <web-resource-name>app</web-resource-name>
             <url-pattern>/checkusername</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>app</web-resource-name>
+            <url-pattern>/css/*</url-pattern>
         </web-resource-collection>
     </security-constraint>
 

@@ -13,27 +13,34 @@
             validationQuery="SELECT 1">
     </Resource><!--under the TOmcat  name should be 'jdbc/StudentsDS'-->
 
-   <!-- <Realm className="org.apache.catalina.realm.MemoryRealm"
+    <!--<Realm className="org.apache.catalina.realm.MemoryRealm"
            pathname="tomcat-users.xml"/>-->
-    <Realm className="org.apache.catalina.realm.MemoryRealm" pathname="${user.dir}/src/main/webapp/WEB-INF/tomcat-users.xml"           />
-    <!--<Realm className="org.apache.catalina.realm.CombinedRealm" >
+    <!--<Realm className="org.apache.catalina.realm.MemoryRealm" pathname="${user.dir}/src/main/webapp/WEB-INF/tomcat-users.xml"           />-->
+
+    <Realm className="org.apache.catalina.realm.CombinedRealm" >
+        <Realm className="org.apache.catalina.realm.MemoryRealm" pathname="${user.dir}/src/main/webapp/WEB-INF/tomcat-users.xml"           />
         <Realm className="org.apache.catalina.realm.JDBCRealm"
                driverName="org.gjt.mm.mysql.Driver"
                digest="MD5"
                connectionURL="jdbc:mysql://localhost/students?user=root&amp;password=tatarstan"
                userTable="users" userNameCol="user_name" userCredCol="user_pass"
                userRoleTable="user_roles" roleNameCol="role_name"/>
-        <Realm className="org.apache.catalina.realm.JAASRealm"
+        <Realm className="org.apache.catalina.realm.JDBCRealm"
+               driverName="org.gjt.mm.mysql.Driver"
+               connectionURL="jdbc:mysql://localhost/students?user=root&amp;password=tatarstan"
+               userTable="users" userNameCol="user_name" userCredCol="uuid"
+               userRoleTable="user_roles" roleNameCol="role_name"/>
+        <!--<Realm className="org.apache.catalina.realm.JAASRealm"
                appName="students"
                userClassNames="students.web.login.JAASUserPrincipal,students.web.login.JAASPasswordPrincipal"
-               roleClassNames="students.web.login.JAASRolePrincipal"/>
-    </Realm>-->
-   <!-- <Realm className="org.apache.catalina.realm.JDBCRealm"
+               roleClassNames="students.web.login.JAASRolePrincipal"/>-->
+    </Realm>
+   <!--<Realm className="org.apache.catalina.realm.JDBCRealm"
            driverName="org.gjt.mm.mysql.Driver"
            digest="MD5"
            connectionURL="jdbc:mysql://localhost/students?user=root&amp;password=tatarstan"
            userTable="users" userNameCol="user_name" userCredCol="user_pass"
-           userRoleTable="user_roles" roleNameCol="role_name"/>-->
-
+           userRoleTable="user_roles" roleNameCol="role_name"/>
+-->
 
 </Context>

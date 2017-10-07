@@ -74,5 +74,9 @@
                 </tr>
             </table>
 </form>
+
+<% if (request.isUserInRole("admin")) { %>
+    Ololo! Min admin!!!!!
+<% } %>
 </body>
 </html>

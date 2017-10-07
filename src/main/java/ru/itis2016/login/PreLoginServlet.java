@@ -43,22 +43,20 @@ public class PreLoginServlet extends HttpServlet {
         Object user = request.getSession().getAttribute("user");
         String username = null;
 
-        if (uuid == null)
-        {if (user != null) {
-            //request.login(user.getUsername(), user.getPassword());
-            //request.getSession().setAttribute("user", user); // Login.
-            log.info("The user is defined from session as: " + user.toString());
-            addCookie(response, COOKIE_NAME, uuid, COOKIE_AGE); // Extends age.
-            log.info("Cookie was added and time prolonged ");
+        if (uuid == null) {
+            if (user != null) {
+                //request.login(user.getUsername(), user.getPassword());
+                //request.getSession().setAttribute("user", user); // Login.
+                log.info("The user is defined from session as: " + user.toString());
+                addCookie(response, COOKIE_NAME, uuid, COOKIE_AGE); // Extends age.
+                log.info("Cookie was added and time prolonged ");
+            } else {
+                log.info("The user is not defined from session as");
+                removeCookie(response, COOKIE_NAME);
+                log.info("Cookie is removed and request is dispatched to the logon.jsp");
+                getServletContext().getRequestDispatcher("/logon.jsp").forward(request, response);
+            }
         } else {
-            log.info("The user is not defined from session as");
-            removeCookie(response, COOKIE_NAME);
-            log.info("Cookie is removed and request is dispatched to the logon.jsp");
-            getServletContext().getRequestDispatcher("/logon.jsp").forward(request, response);
-        }
-        }
-
-        else  {
             try {
                 username = userDAO.findUsernameByUUID(uuid);
                 log.info("The cookie for the student app accepted; the corresponding user fount: " + username);
@@ -66,14 +64,13 @@ public class PreLoginServlet extends HttpServlet {
                 log.info("The user " + username + " was requested to log in using username and uuid received from cookie");
                 addCookie(response, COOKIE_NAME, uuid, COOKIE_AGE); // Extends age.
                 log.info("Cookie was added and time prolonged ");
-                PrintWriter pw=response.getWriter();
+                PrintWriter pw = response.getWriter();
                 pw.print("<body onLoad=\"window.location.reload()\"/>");
 
             } catch (SQLException e) {
                 e.printStackTrace();
                 getServletContext().getRequestDispatcher("/logon.jsp").forward(request, response);
-            } catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
                 removeCookie(response, COOKIE_NAME);
                 getServletContext().getRequestDispatcher("/logon.jsp").forward(request, response);
@@ -87,7 +84,7 @@ public class PreLoginServlet extends HttpServlet {
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
-                if (name.equals(cookie.getName()) && cookie.getValue()!=null && cookie.getValue()!="") {
+                if (name.equals(cookie.getName()) && cookie.getValue() != null && cookie.getValue() != "") {
                     log.info("Cookie sent: " + cookie.getName());
                     return cookie.getValue();
                 }
@@ -101,7 +98,7 @@ public class PreLoginServlet extends HttpServlet {
         cookie.setPath("/studentsApp/");
         cookie.setMaxAge(maxAge);
         cookie.setHttpOnly(true);
-        cookie.setSecure(true);
+        //cookie.setSecure(true);
         response.addCookie(cookie);
     }
 
